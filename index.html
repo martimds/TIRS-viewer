@@ -1,0 +1,57 @@
+<!doctype html>
+<meta charset="utf-8" />
+<link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/maplibre-gl@6.16.0/dist/maplibre-gl.css"
+/>
+<style>
+    body {
+        margin: 0;
+        font: 14px sans-serif;
+    }
+    #map {
+        position: absolute;
+        inset: 0;
+    }
+    #controls {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+    }
+    #timeline {
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 36px;
+        z-index: 1;
+        padding: 8px 12px;
+        background: #fffd;
+        border-radius: 4px;
+        text-align: center;
+    }
+    #scene {
+        width: 100%;
+    }
+    #warning {
+        text-decoration: none;
+    }
+</style>
+<div id="map"></div>
+<div id="controls">
+    <input id="visible" type="checkbox" checked />
+    <input id="opacity" type="range" max="1" step="0.01" value="0.8" />
+</div>
+<div id="timeline">
+    <div>
+        <span id="info"></span>
+        <a
+            id="warning"
+            href="https://www.usgs.gov/landsat-missions/landsat-9-oli-and-tirs-calibration-notices#2023-03"
+            hidden
+            >⚠️</a
+        >
+    </div>
+    <input id="scene" type="range" />
+</div>
+<script type="module" src="viewer.js"></script>
